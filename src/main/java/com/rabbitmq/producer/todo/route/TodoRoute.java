@@ -21,7 +21,7 @@ public class TodoRoute extends RouteBuilder {
                 .redeliveryDelay(2000)
                 .maximumRedeliveries(2)
                 .useOriginalMessage()
-                .log(LoggingLevel.ERROR,"Exception: Sending message to dead letter. TodoDto ${body}")
+                .log(LoggingLevel.ERROR,"Exception: Sending message to dead letter. TodoModel ${body}")
                 .logRetryAttempted(true);
 
         from("direct:createTodo")

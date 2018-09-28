@@ -1,5 +1,8 @@
 package com.rabbitmq.producer.todo.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class TodoModel {
 
     private String name;
@@ -38,4 +41,7 @@ public class TodoModel {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    @Override
+    public String toString() { return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE); }
 }
